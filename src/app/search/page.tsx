@@ -70,6 +70,14 @@ const filterOutEmptyTrackname = (results: SingleResultType[]) => {
 };
 
 const Search = () => {
+	return (
+		<Suspense>
+			<SearchComponent />
+		</Suspense>
+	);
+};
+
+const SearchComponent = () => {
 	const [renderSearchModal, setRenderSearchModal] = useState(false);
 	const [buttonLoading, setButtonLoading] = useState(false);
 	const [offset, setOffset] = useState<number>(0);
@@ -114,7 +122,7 @@ const Search = () => {
 	const noResult = results.results.length <= 0;
 
 	return (
-		<Suspense>
+		<>
 			{renderSearchModal && (
 				<SearchModal
 					onClose={() => {
@@ -177,7 +185,7 @@ const Search = () => {
 					</div>
 				)}
 			</div>
-		</Suspense>
+		</>
 	);
 };
 
