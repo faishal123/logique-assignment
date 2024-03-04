@@ -15,7 +15,7 @@ export default function Home() {
 		router.push(`/search?term=${searchValue.trim()}`);
 	};
 	return (
-		<div className="flex flex-col w-full h-screen border border-red-900 border-solid bg-gradient-to-b from-top-gradient to-bottom-gradient py-[26px] px-[30px]">
+		<div className="flex flex-col w-full h-screen bg-gradient-to-b from-top-gradient to-bottom-gradient py-[26px] px-[30px]">
 			<div className="flex-grow flex justify-center items-center">
 				<Image src={logo} alt="logo" width={73} height={85} />
 			</div>
