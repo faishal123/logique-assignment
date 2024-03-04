@@ -1,7 +1,7 @@
 "use client";
 
 import TopBar from "@/components/TopBar/TopBar";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Button from "@/components/Button/Button";
 import SearchModal from "@/components/SearchModal/SearchModal";
 import SingleItem from "@/components/SingleItem/SingleItem";
@@ -114,7 +114,7 @@ const Search = () => {
 	const noResult = results.results.length <= 0;
 
 	return (
-		<>
+		<Suspense>
 			{renderSearchModal && (
 				<SearchModal
 					onClose={() => {
@@ -177,7 +177,7 @@ const Search = () => {
 					</div>
 				)}
 			</div>
-		</>
+		</Suspense>
 	);
 };
 
